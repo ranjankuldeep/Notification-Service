@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+#  nginx:
+#   build:
+#    context: ./nginx
+#    dockerfile: dockerfile.nginx
+#   ports:
+#    - "80:80"
+
+ websocket1:
+  build:
+   context: ./wss
+   dockerfile: dockerfile.wss
+  environment:
+   - PORT=8002
+  ports:
+    - "8002:8002" 
+
+ websocket2:
+  build:
+   context: ./wss
+   dockerfile: dockerfile.wss
+  environment:
+   - PORT=8003
+  ports:
+    - "8003:8003"   

@@ -1,0 +1,14 @@
+# Use the base image that includes the necessary dependencies for your WebSocket server
+FROM node:14
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy your WebSocket server code to the container
+COPY . .
+
+# Install dependencies if any
+RUN npm install
+
+# Run the WebSocket server
+CMD [ "node", "index.js" ]
